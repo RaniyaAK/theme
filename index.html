@@ -3,51 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Themetoggle</title>
   </head>
 
   <body>
+
     <section>
       <div class="container">
-         <h1 id="h">change my theme</h1>
-         <button onclick="colorwhite()">Dark/light</button>
+         <h1 id="h">Change my theme</h1>
+         <button onclick="toggletheme()">Dark/Light</button>
       </div>
     </section>
 
     <script>
-      
-      function colorwhite()
+            
+      let isDark = true;
+
+      function toggletheme()
       {
-        document.body.style.background="white";
-        document.getElementById("h").style.color="black";
+      if (isDark)
+      {
+          document.body.style.background="white";
+          document.getElementById("h").style.color="black";
+      }
+      else
+      {
+          document.body.style.background="black";
+          document.getElementById("h").style.color="white";
+
+      }
+      isDark = !isDark;
+      }
+    </script>
+
+ </body>
+ <style>
+     
+      body {
+        background-color: black;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-    </script>
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    </style>
   </body>
-
-
-  <style>
-    section {
-      height: 100 vh;
-    }
-    body{
-      background-color: black;
-    }
-    
-    div {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 50px;
-      color: white;
-    }
-
-    button {
-      padding: 10px;
-      font-weight: 600;
-    }
-
-  </style>
   
 </html>
